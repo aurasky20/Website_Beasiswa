@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Beranda</title>
+    <link rel="stylesheet" href="beranda.css">
+    <link rel="icon" type="image/svg" href="logo/PSG.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img src="logo/logoPutih.svg" alt="logo">
+                </div>
+                <div class="link">
+                    <a style="color:#F0C901;"><strong>Beranda</strong></a>
+                    <a href="#jadwal" onclick="scrollToSection(event, 'jadwal')">Jadwal</a>
+                    <a href="#syarat" onclick="scrollToSection(event, 'syarat')">Persyaratan</a>
+                    <a href="#kontak" onclick="scrollToSection(event, 'kontak')">Kontak</a>
+                    <a href="login.php"><button>Login</button></a>
+                </div>
+            </header>
+            <div class="carousel">
+                <h1>Raih Mimpimu bersama PENS Scholarship Gateway (PSG)</h1>
+                <p>Selamat datang di portal beasiswa kami! Di sini, Anda bisa mendaftarkan diri untuk mendapatkan beasiswa yang dapat membantu mewujudkan impian pendidikan Anda. Mari bersama-sama menjalani perjalanan menuju kesuksesan dan masa depan yang lebih cerah. 
+                    <br><br>
+                    Ayo bergabung dan raih prestasi yang gemilang!</p>
+                
+            </div>
+             
+        </div>
+
+        <div class="btn">
+            <a href="registrasi1.php" >
+                <button>
+                    <img src="icon/orgputih.svg" alt="org">
+                    <h3>DAFTAR/MASUK</h3>
+                </button>
+            </a>
+            
+            <button>
+                <img src="icon/panduan.svg" alt="panduan">
+                <h3>Panduan Pendaftaran</h3>
+            </button>
+        </div>
+        <div class="jadwal" id="jadwal">
+            <h2>Jadwal PSG</h2>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>No.</th>
+                    <th></th>
+                    <th>Kegaiatan</th>
+                    <th></th>
+                    <th>Tanggal</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1.</td>
+                    <td></td>
+                    <td>Pendaftaran akun PSG pengisian berkas</td>
+                    <td></td>
+                    <td>1 Juli 2024 - 31 Agustus 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2.</td>
+                    <td></td>
+                    <td>Penutupan pendaftaran akun</td>
+                    <td></td>
+                    <td>1 September 2024</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3.</td>
+                    <td></td>
+                    <td>Pengumuman penerima PENS SG</td>
+                    <td></td>
+                    <td>14 September 2024</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="keterangan">
+                <h4>Keterangan</h4>
+                <p>Jadwal dapat berubah sewaktu-waktu.</p>
+            </div>
+            
+        </div>
+        <div class="syarat" id="syarat">
+            <div class="img">
+                <img src="picture/orgsyarat.svg" alt="orang">
+            </div>
+            <div class="isi">
+                <h2>Persyaratan Pendaftaran</h2><br>
+                <ul>
+                    <li>Mahasiswa Aktif PENS</li><br>
+                    <li>Mahasiswa D4 Yang Sedang Menempuh Semester 3 atau Semester 5</li><br>
+                    <li>Mahasiswa D3 Yang Sedang Menempuh Semester 3</li><br>
+                    <li>Memiliki potensi akademik baik tetapi memiliki keterbatasan ekonomi yang didukung bukti dokumen yang sah</li><br>
+                    <li>Memiliki transkrip nilai terbaru</li>
+                </ul>
+            </div>
+        </div>
+        <div class="kontak" id="kontak">
+            <div>
+                <h2>Hubungi Kami di</h2>
+                <img src="icon/pens.svg" alt="pens">
+            </div>
+            
+            <div class="keterangan">
+                <h3>Politeknik Elektronika Negeri Surabaya</h3>
+                <p>Politeknik Elektronika Negeri Surabaya (PENS) Kampus PENS, 
+                    Jl. Raya ITS Keputih Sukolilo Surabaya 60111 Jawa Timur</p>
+                <div class="wa">
+                    <img src="icon/phone.svg" alt="telp">
+                    <a>+62 31 5947280</a>
+                </div>
+                <div class="ig">
+                    <img src="icon/R igsvg.svg" alt="ig">
+                    <a href="https://www.instagram.com/penseepis/">@penseepis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 PENS Scolarship Gateway | ZZA</p>
+    </footer>
+
+    <script>
+        function scrollToSection(event, sectionId) {
+            event.preventDefault();
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>

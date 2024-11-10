@@ -1,0 +1,695 @@
+:root {
+  --light-blue: #1A43BF;
+  --medium-blue: #0D2FA7;
+  --dark-blue: #0A2471;
+  --half-blue: #C8D3F2;
+  --black: #00072C;
+  --white: #F4F7FF;
+  --red: #D72525;
+  --yellow: #F0C901;
+  --hover-yellow: #FDD922;
+  --light-grey: #8290B0;
+  --dark-grey: #4F5E73;
+  --shadow-tebal: 4px 4px 4px rgba(82, 93, 134, 0.3);
+  --shadow-tipis: 2px 2px 4px rgba(82, 93, 134, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: 'open sans';
+  background-color: var(--white);
+  color: #0A2471;
+}
+
+/* Header */
+header {
+  background: linear-gradient(0deg, var(--dark-blue) 0%, #063594 100%);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+}
+
+header .gambar img {
+  margin: 8px 75px;
+  width: 150px;
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 75px;
+}
+
+.profile h4 {
+  margin-right: 20px;
+}
+
+.profile-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.user-pic {
+  width: 40px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+/* Profile overlay */
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 320px;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  margin: 20px;
+  background: linear-gradient(0deg, var(--dark-blue) 0%, #063594 100%);
+  border-radius: 20px;
+}
+
+.sub-menu-wrap.open-menu {
+  max-width: 300px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin: 20px 20px;
+}
+
+.user-info h4 {
+  margin: 0 20px;
+}
+
+.user-info img {
+  width: 60px;
+  margin-right: 10px;
+}
+
+.sub-menu .logout h4 {
+  margin: 15px 0;
+  justify-content: center;
+}
+
+.sub-menu .logout a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.sub-menu-wrap .sub-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: var(--medium-blue);
+}
+
+.sub-menu-wrap .sub-menu-link:hover {
+  background-color: var(--yellow);
+}
+
+.sub-menu-link img {
+  width: 30px;
+  margin-right: 15px;
+}
+
+/* Header end */
+
+/* Conntent */
+.content {
+  margin: 50px 100px 200px 200px;
+}
+
+/* link-berkas */
+.link-berkas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  width: 150px;
+  height: 40px;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  background-color: var(--medium-blue);
+  font-family: "Open Sans";
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.radio-container input[type="radio"] {
+  display: none;
+}
+
+.radio-container input[type="radio"]:checked+label,
+.radio-container input[type="radio"]:checked+label+.radio-container {
+  background-color: var(--hover-yellow);
+  color: var(--dark-blue);
+}
+
+.radio-container:hover,
+.active-tab {
+  background-color: var(--hover-yellow);
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+.berkasItem {
+  display: none;
+ 
+}
+
+input[type="radio"]:checked~.berkas .berkasItem {
+  display: none;
+}
+
+input[type="radio"]#biodata:checked~.berkas #berkasBiodata,
+input[type="radio"]#keluarga:checked~.berkas #berkasKeluarga,
+input[type="radio"]#ekonomi:checked~.berkas #berkasEkonomi,
+input[type="radio"]#nipres:checked~.berkas #berkasPrestasi,
+input[type="radio"]#upload:checked~.berkas #berkasUpload {
+  display: block;
+}
+
+#biodata:checked~label.biodata,
+#keluarga:checked~label.keluarga,
+#ekonomi:checked~label.ekonomi,
+#prestasi:checked~label.prestasi,
+#upload:checked~label.upload {
+  background-color: var(--hover-yellow);
+  color: var(--dark-blue);
+  font-weight: bold;
+}
+
+/* Link-berkas end */
+
+/* Berkas Biodata */
+.keluarga table {
+  width: 80%;
+}
+
+#nama {
+  width: 90%;
+  font-family: "Open Sans";
+}
+
+#pilihan {
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: var(--half-blue);
+  width: 250px;
+  height: 40px;
+  font-size: 16px;
+  color: #052f76;
+  padding: 4px 8px;
+  margin: 16px 20px;
+}
+
+#alamat {
+  font-family: "Open Sans";
+  border: 2px solid;
+  border-radius: 8px;
+  border-color: var(--half-blue);
+  font-size: 16px;
+  color: #052f76;
+  padding: 4px 8px;
+  margin-left: 20px;
+}
+
+input[type="radio"],
+.tambah input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  background-color: #fff;
+  margin-left: 20px;
+  color: var(--dark-blue);
+}
+
+#laki-laki, #perempuan,
+#individu, #kelompok {
+  padding: 0;
+  height: 16px;
+  width: 16px;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--dark-blue);
+}
+
+/* Berkas Keluarga */
+.keluarga {
+  width: 100%;
+}
+
+.keluarga form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: default;
+}
+
+.keluarga .submit {
+  border: none;
+  background-color: #F0C901;
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--dark-blue);
+  font-size: 14px;
+  font-weight: bold;
+  width: 80%;
+  margin: 20px 0 20px;
+  box-shadow: var(--shadow-tipis);
+}
+
+/* Berkas Ekonomi & biodata */
+.biodata form,
+.ekonomi form {
+  display: flex;
+  gap: 50px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: default;
+}
+
+.biodata form table input,
+.keluarga form table input,
+.ekonomi form table input,
+.tambah form table input {
+  margin: 8px 0 8px 20px;
+  height: 24px;
+  border-radius: 8px;
+  border: 2px solid var(--half-blue);
+  padding: 4px 8px;
+  font-size: 16px;
+  color: var(--dark-blue);
+  cursor: default;
+}
+
+.keluarga form table td h3,
+.ekonomi form table td h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.submit {
+  border: none;
+  background-color: #F0C901;
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--dark-blue);
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  margin: 20px 0 20px;
+  box-shadow: var(--shadow-tipis);
+}
+
+.submit:hover {
+  background-color: var(--hover-yellow);
+  box-shadow: none;
+}
+
+.biodata .custum-file-upload {
+  height: 200px;
+  width: 150px;
+}
+
+.custum-file-upload {
+  height: 160px;
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid var(--half-blue);
+  background-color: white;
+  color: var(--medium-blue);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.custum-file-upload .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload .icon svg {
+  height: 80px;
+  fill: var(--light-grey);
+
+}
+
+.custum-file-upload .text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custum-file-upload input {
+  display: none;
+
+}
+
+.custum-file-upload img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95%;
+  height: 95%;
+  object-fit: cover;
+  display: none;
+  padding: 5px;
+}
+/* Berkas END*/
+
+/* Berkas Prestasi & nilai */
+.berkas {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+}
+
+.nilai input {
+  margin: 12px 0;
+  height: 32px;
+  width: 50px;
+  border-radius: 8px;
+  border: 2px solid var(--half-blue);
+  padding: 0 8px;
+  font-size: 18px;
+  color: var(--dark-blue);
+}
+
+.nilai label {
+  margin-right: 20px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: var(--dark-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  width: 300px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#fileUpload {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border: 2px solid var(--half-blue);
+  height: 40px;
+}
+
+#fileName {
+  margin-left: 10px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0px;
+  /* Adjust the max-width as needed */
+}
+
+.upload-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-left: 10px;
+  background-color: var(--half-blue);
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 50px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.upload-icon img {
+  width: 28px;
+}
+
+.prestasi {
+  margin: 40px 0;
+  padding: 0 20px 40px;
+  border: 1px solid var(--medium-blue);
+  border-radius: 8px;
+}
+
+.prestasi .upload-prestasi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prestasi .upload-prestasi button {
+  justify-content: space-between;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 16px;
+  box-shadow: var(--shadow-tipis);
+}
+
+.prestasi .upload-prestasi button a {
+  display: flex;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.prestasi .upload-prestasi button:hover {
+  background-color: var(--hover-yellow);
+  box-shadow: none;
+}
+
+.upload-prestasi button img {
+  margin-right: 10px;
+}
+
+.prestasi .info {
+  display: flex;
+  align-items: center;
+  background-color: var(--medium-blue);
+  color: var(--white);
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.prestasi .info img {
+  margin-right: 8px;
+}
+
+.prestasi .input table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin: 20px 0 0; */
+  font-size: 16px;
+}
+
+.prestasi table tr th {
+  border: 2px solid var(--dark-blue);
+  padding: 8px 0;
+  margin: 0;
+}
+
+.prestasi table tr td {
+  border: 2px solid var(--dark-blue);
+  padding: 8px;
+  margin: 0;
+  text-align: center;
+}
+
+#edit {
+  background-color: var(--yellow);
+  width: 30px;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: var(--shadow-tipis);
+}
+
+#delete {
+  background-color: var(--red);
+  width: 30px;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: var(--shadow-tipis);
+}
+
+#edit:hover, #delete:hover {
+  box-shadow: none;
+}
+
+form .btn-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form .btn-upload input {
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 8px;
+  color: var(--dark-blue);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: var(--shadow-tipis);
+}
+
+form .btn-upload input:hover {
+  background-color: var(--hover-yellow);
+  box-shadow: none;
+}
+
+/* Berkas Upload */
+.upload_berkas .tabel_status {
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.upload_berkas table {
+  width: 45vh;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  border-top: 1px solid var(--medium-blue);
+  border-bottom: 1px solid var(--medium-blue);
+}
+
+.upload_berkas table th,
+.upload_berkas table td {
+  padding: 8px 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.upload_berkas th:nth-child(1),
+.upload_berkas th:nth-child(2) {
+  border-bottom: 1px solid var(--medium-blue);
+}
+
+.upload_berkas th:nth-child(1),
+.upload_berkas td:nth-child(1) {
+  border-right: 1px solid var(--medium-blue);
+}
+
+.upload_berkas .btn-upload input {
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 8px;
+  color: var(--dark-blue);
+  padding: 10px 16vh;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: var(--shadow-tipis);
+}
+
+.upload_berkas .btn-upload input:hover {
+  background-color: var(--hover-yellow);
+  box-shadow: none;
+}
+
+/* Content End */
+
+/* Footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0;
+  bottom: 0;
+  color: var(--white);
+  background-color: var(--dark-blue);
+  z-index: 2;
+  height: 100px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Tambah prestasi */
+.berkas .tambah form{
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+.berkas .tambah .input-data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.berkas .tambah table tr td select{
+  height: 40px;
+  width: 200px;
+  border-radius: 8px;
+  border: 2px solid var(--half-blue);
+  color: var(--dark-blue);
+  font-size: 16px;
+  padding: 4px 8px;
+  margin: 10px 20px;
+}
+.tambah .input-scan .file-upload-wrapper{
+  margin-top: 10px;
+}
+
+/* Gaya placeholder */
+.input::placeholder {
+  color: #888888; /* Warna teks placeholder */
+  font-style: italic; /* Membuat teks miring */
+  font-size: 16px; /* Mengubah ukuran font */
+}
+
+#footer-tambah{
+  position: fixed;
+  height: 20px;
+}
+#footer-tambah p{
+  font-size: 12px;
+}
+
+#tambah-content{
+  margin-bottom: 0;
+}
